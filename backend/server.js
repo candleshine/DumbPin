@@ -27,8 +27,16 @@ app.use(limiter);
 
 // Routes
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to PinPoint API' });
+  res.json({ message: 'Welcome to DumbPin API' });
 });
+
+// Import and use image routes
+const imageRoutes = require('./routes/imageRoutes');
+app.use('/api/images', imageRoutes);
+
+// Import and use map routes
+const mapRoutes = require('./routes/mapRoutes');
+app.use('/api/maps', mapRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -41,8 +49,12 @@ app.use((err, req, res, next) => {
 
 // Start server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+// Only start the server if this file is run directly (not imported in tests)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
 
 module.exports = app; // For testing purposes

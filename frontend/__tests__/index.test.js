@@ -17,6 +17,6 @@ describe('Frontend Application', () => {
     
     // Check if the app container has been populated
     const appContainer = document.getElementById('app');
-    expect(appContainer.innerHTML).toContain('Welcome to PinPoint');
+    expect(appContainer.innerHTML).toContain('DumbPin');
   });
 });

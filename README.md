@@ -112,7 +112,7 @@ Please make sure to update tests as appropriate and follow our coding standards.
 
 ## License 📝
 
-This project is licensed under the ISC License - see the LICENSE file for details.
+This project is licensed under the Creative Commons Attribution (CC BY) License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Support 💬
 

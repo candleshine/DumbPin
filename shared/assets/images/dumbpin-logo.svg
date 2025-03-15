@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Main circle background -->
+  <circle cx="100" cy="100" r="90" fill="#f8f9fa" stroke="#4a6fa5" stroke-width="6"/>
+  
+  <!-- Pin shape -->
+  <g transform="translate(100, 100) scale(0.8)">
+    <!-- Pin head -->
+    <circle cx="0" cy="-30" r="25" fill="#4a6fa5"/>
+    
+    <!-- Pin body -->
+    <path d="M -15,-10 L 15,-10 L 0,60 Z" fill="#ff6b6b"/>
+    
+    <!-- Pin highlight -->
+    <circle cx="-8" cy="-38" r="6" fill="#ffffff" opacity="0.6"/>
+  </g>
+  
+  <!-- Text "DumbPin" -->
+  <text x="100" y="160" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    DumbPin
+  </text>
+</svg>

@@ -1,7 +1,7 @@
 {
   "name": "dumbpin",
-  "version": "1.0.0",
-  "description": "PinPoint revolutionizes the way you interact with images and maps! Whether you're planning a tour, sharing photography spots, or tracking your travels, PinPoint makes visual collaboration simple and fun.",
+  "version": "1.1.0",
+  "description": "DumbPin revolutionizes the way you interact with images and maps! Whether you're planning a tour, sharing photography spots, or tracking your travels, DumbPin makes visual collaboration simple and fun.",
   "main": "index.js",
   "scripts": {
     "start": "node backend/server.js",
@@ -24,7 +24,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "express-rate-limit": "^7.5.0"
+    "express-rate-limit": "^7.5.0",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -33,10 +35,15 @@
     "concurrently": "^8.2.2",
     "css-loader": "^6.10.0",
     "eslint": "^8.57.0",
+    "html-webpack-plugin": "^5.5.3",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
+    "sharp": "^0.33.5",
     "style-loader": "^3.3.4",
-    "supertest": "^6.3.4"
+    "supertest": "^6.3.4",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   }
 }

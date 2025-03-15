@@ -1,6 +1,6 @@
-# PinPoint Coding Standards
+# DumbPin Coding Standards
 
-This document outlines the coding standards and best practices for the PinPoint project. Following these guidelines ensures consistency across the codebase and makes collaboration easier.
+This document outlines the coding standards and best practices for the DumbPin project. Following these guidelines ensures consistency across the codebase and makes collaboration easier.
 
 ## General Guidelines
 

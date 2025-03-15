@@ -1,4 +1,4 @@
-/* Main styles for PinPoint application */
+/* Main styles for DumbPin application */
 
 :root {
   --primary-color: #4a6fa5;
@@ -46,10 +46,295 @@ button:hover {
   background-color: #3a5a8c;
 }
 
+button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
 .container {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+}
+
+/* App Layout */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Image Upload Styles */
+.image-upload {
+  width: 100%;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-input-container {
+  width: 100%;
+}
+
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border: 2px dashed var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-input-label:hover {
+  background-color: #dee2e6;
+}
+
+.file-input-icon {
+  font-size: 1.5rem;
+}
+
+.selected-file-info {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.upload-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.upload-progress {
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.upload-error {
+  color: #dc3545;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+}
+
+/* Image Display Styles */
+.image-display {
+  width: 100%;
+}
+
+.image-container {
+  margin-bottom: 15px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Default 16:9 aspect ratio */
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.display-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.no-image-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+}
+
+.image-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pin-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pin-style-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Pin Styles */
+.pin-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+  cursor: move;
+  z-index: 10;
+}
+
+.pin.dragging {
+  z-index: 20;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.pin-mode {
+  cursor: crosshair;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .app-content {
+    flex-direction: row;
+  }
+  
+  .upload-section {
+    flex: 1;
+  }
+  
+  .display-section {
+    flex: 2;
+  }
+}
+
+
+/* Map Display Styles */
+.map-display {
+  width: 100%;
+}
+
+.map-container {
+  margin-bottom: 15px;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Default 16:9 aspect ratio */
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.map-pin-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.no-map-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+}
+
+.map-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.custom-map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-map-pin div {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
 }

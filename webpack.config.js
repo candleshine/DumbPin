@@ -42,9 +42,13 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     port: 8080,
+    host: '0.0.0.0', // Allow connections from outside the container
     hot: true,
-    proxy: {
-      '/api': 'http://localhost:3000'
-    }
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:3000'
+      }
+    ]
   }
 };

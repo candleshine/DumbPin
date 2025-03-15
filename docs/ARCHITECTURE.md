@@ -1,6 +1,6 @@
-# PinPoint Architecture
+# DumbPin Architecture
 
-This document outlines the architecture of the PinPoint application, explaining the key components, data flow, and technical decisions.
+This document outlines the architecture of the DumbPin application, explaining the key components, data flow, and technical decisions.
 
 ## System Overview
 

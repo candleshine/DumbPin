@@ -1,6 +1,6 @@
-# PinPoint Developer Onboarding Guide
+# DumbPin Developer Onboarding Guide
 
-Welcome to the PinPoint development team! This guide will help you get up to speed with our project, understand its architecture, and start contributing effectively.
+Welcome to the DumbPin development team! This guide will help you get up to speed with our project, understand its architecture, and start contributing effectively.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Welcome to the PinPoint development team! This guide will help you get up to spe
 
 ## Project Overview
 
-PinPoint is an interactive visual collaboration tool that allows users to transform images and maps into interactive canvases. Our application enables users to:
+DumbPin is an interactive visual collaboration tool that allows users to transform images and maps into interactive canvases. Our application enables users to:
 
 - 🖼️ Place pins on images with custom labels and descriptions
 - 🌍 Create custom maps with personalized markers
@@ -72,7 +72,7 @@ docker-compose up
 
 ## Project Architecture
 
-PinPoint follows a modern web application architecture with separate frontend and backend components.
+DumbPin follows a modern web application architecture with separate frontend and backend components.
 
 ### System Overview
 

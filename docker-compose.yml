@@ -4,10 +4,15 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3000:3000"  # Backend API port
+      - "8080:8080"  # Frontend webpack dev server port
     volumes:
       - .:/app
       - /app/node_modules
+      - ./uploads:/app/uploads
     environment:
       - NODE_ENV=development
+      - PORT=3000
+      - JWT_SECRET=dumbpin_development_secret
+      - JWT_EXPIRES_IN=1d
     command: npm run dev
