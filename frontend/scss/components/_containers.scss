@@ -1,0 +1,42 @@
+/* Container styles using BEM naming convention */
+
+.container {
+  background-color: white;
+  border-radius: $border-radius-md;
+  @include box-shadow;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  
+  @include modifier('no-padding') {
+    padding: 0;
+  }
+  
+  @include modifier('small-padding') {
+    padding: $spacing-sm;
+  }
+  
+  @include modifier('large-padding') {
+    padding: $spacing-xl;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: $border-radius-sm;
+  @include box-shadow;
+  overflow: hidden;
+  
+  @include element('header') {
+    padding: $spacing-md;
+    border-bottom: 1px solid $border-color;
+  }
+  
+  @include element('body') {
+    padding: $spacing-md;
+  }
+  
+  @include element('footer') {
+    padding: $spacing-md;
+    border-top: 1px solid $border-color;
+  }
+}

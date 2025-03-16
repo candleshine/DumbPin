@@ -1,0 +1,19 @@
+/* Content layout styles using BEM naming convention */
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  
+  @include respond-to(md) {
+    flex-direction: row;
+  }
+  
+  &__upload-section {
+    flex: 1;
+  }
+  
+  &__display-section {
+    flex: 2;
+  }
+}

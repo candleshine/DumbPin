@@ -1,0 +1,43 @@
+// Variables for DumbPin application
+
+// Colors
+$primary-color: #4a6fa5;
+$secondary-color: #ff6b6b;
+$background-color: #f8f9fa;
+$text-color: #333;
+$border-color: #ddd;
+$error-color: #dc3545;
+$error-bg-color: #f8d7da;
+$light-gray: #e9ecef;
+$medium-gray: #dee2e6;
+$dark-gray: #6c757d;
+$darker-gray: #5a6268;
+
+// Shadows
+$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$pin-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-index
+$z-index-base: 1;
+$z-index-pin: 10;
+$z-index-pin-active: 20;
+
+// Transitions
+$transition-speed: 0.3s;

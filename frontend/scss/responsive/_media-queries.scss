@@ -1,0 +1,12 @@
+/* Responsive media queries */
+
+// These media queries are already handled by the respond-to mixin
+// This file is kept for any additional responsive adjustments that might be needed
+
+// Example of a custom media query that doesn't fit the standard breakpoints
+@media (max-height: 600px) {
+  .image-display__empty,
+  .map-display__empty {
+    height: 200px;
+  }
+}

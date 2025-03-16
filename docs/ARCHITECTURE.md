@@ -78,3 +78,5 @@ journey
       Update State: 5: System
       Persist Data: 3: System
 ```
+##  Why not use React or other frameworks?
+Something something, everything is less performant these days, relies on libraries, nice to just have something that stands alone, something something simple is better

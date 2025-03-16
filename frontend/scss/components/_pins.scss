@@ -1,0 +1,57 @@
+/* Pin styles using BEM naming convention */
+
+.pin {
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  &__item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    transform: translate(-50%, -50%);
+    box-shadow: $pin-shadow;
+    pointer-events: auto;
+    cursor: move;
+    z-index: $z-index-pin;
+    @include transition(transform);
+    
+    &--dragging {
+      z-index: $z-index-pin-active;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+  
+  &__controls {
+    @include flex-center;
+    gap: $spacing-md;
+  }
+  
+  &__style-controls {
+    @include flex-center;
+    gap: $spacing-sm;
+  }
+  
+  &__mode {
+    cursor: crosshair;
+  }
+  
+  &__custom {
+    @include flex-center;
+    
+    div {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: $pin-shadow;
+    }
+  }
+}

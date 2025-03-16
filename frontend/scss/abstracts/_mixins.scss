@@ -1,0 +1,55 @@
+// Mixins for DumbPin application
+
+// Media query mixins for responsive design
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Box shadow mixin
+@mixin box-shadow($shadow: $box-shadow) {
+  box-shadow: $shadow;
+}
+
+// Transition mixin
+@mixin transition($property: all, $duration: $transition-speed, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// BEM mixins to help follow BEM naming convention
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}

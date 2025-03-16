@@ -1,0 +1,33 @@
+/* Reset styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+input, textarea, select {
+  font-family: inherit;
+}

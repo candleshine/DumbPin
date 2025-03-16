@@ -1,0 +1,44 @@
+/* Typography styles */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $spacing-md;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+  color: $primary-color;
+  text-align: center;
+  
+  @include respond-to(md) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  
+  @include respond-to(md) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  line-height: 1.6;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  @include transition(color);
+  
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}

@@ -8,7 +8,7 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
 - Initialize frontend structure
   - [x] Create component directory structure
   - [x] Set up build system (Webpack)
-  - [ ] Configure CSS preprocessing
+  - [X] Configure CSS preprocessing
 - Development environment
   - [x] Set up linting and formatting (ESLint, Prettier)
   - [x] Configure Jest for frontend testing
@@ -59,10 +59,13 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [ ] Implement file type validation (JPG, PNG, GIF)
   - [ ] Add file size validation (max 5MB)
   - [ ] Display upload progress indicator
+  - [ ] Implement multiple file selection
+  - [ ] Add file extension filtering UI
 - Image display component
   - [ ] Create responsive image container
   - [ ] Implement correct aspect ratio preservation
   - [ ] Add loading states and error handling
+  - [ ] Implement mobile-friendly responsive design
 
 ### Backend Tasks
 - File storage system
@@ -70,6 +73,8 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [x] Create file storage service
   - [x] Add file type and size validation
   - [x] Implement error handling for storage operations
+  - [ ] Add support for multiple file uploads
+  - [ ] Implement file extension filtering
 - Image metadata
   - [ ] Create image model with metadata
   - [ ] Implement metadata storage and retrieval
@@ -82,15 +87,21 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
 
 ### Acceptance Criteria
 - User can upload JPG, PNG, and GIF images up to 5MB
+- User can select and upload multiple files at once
+- User can drag and drop files for upload
 - Uploaded images display with correct aspect ratio
 - System provides feedback on upload progress and success/failure
 - Images persist between sessions
+- Interface is responsive and mobile-friendly
 
 ### Test Cases
 - Upload valid image files of each supported format
+- Upload multiple files simultaneously
+- Test drag and drop functionality
 - Attempt to upload oversized files (>5MB)
 - Attempt to upload unsupported file types
 - Verify image retrieval with correct metadata
+- Test responsive behavior on mobile devices
 
 ## Phase 2: Basic Pin Functionality (2 Weeks)
 
@@ -104,6 +115,10 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [ ] Create pin component with customizable appearance
   - [ ] Implement color selection for pins
   - [ ] Add size adjustment options
+- UI Enhancements
+  - [ ] Implement dark mode toggle
+  - [ ] Create responsive UI components
+  - [ ] Add accessibility features
 
 ### Backend Tasks
 - Pin data management
@@ -197,23 +212,32 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [ ] Create endpoints for updating pin metadata
   - [ ] Implement storage for custom pin images
   - [ ] Add validation for pin customization data
+- Security features
+  - [ ] Implement optional PIN protection for sensitive content
+  - [ ] Create PIN validation middleware
+  - [ ] Add secure PIN storage
+  - [ ] Implement PIN reset functionality
 
 ### Deliverables
 - Pin labels and descriptions
 - Custom pin images
 - Text formatting options for descriptions
+- PIN protection for sensitive content
 
 ### Acceptance Criteria
 - User can add text labels to pins
 - User can create detailed descriptions for pins
 - User can upload and use custom images for pins
 - Text formatting options work in pin descriptions
+- User can protect sensitive content with a PIN
 
 ### Test Cases
 - Add labels to multiple pins
 - Create formatted descriptions for pins
 - Upload and apply custom pin images
 - Verify label and description persistence
+- Test PIN protection functionality
+- Attempt unauthorized access to PIN-protected content
 
 ## Phase 5: Image Export & Download (2 Weeks)
 
@@ -302,6 +326,10 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [ ] Add visual indicators for access level
   - [ ] Implement read-only view restrictions
   - [ ] Create permission request interface
+- Notification system
+  - [ ] Create notification preferences UI
+  - [ ] Implement notification settings
+  - [ ] Add notification event selection
 
 ### Backend Tasks
 - Access control system
@@ -313,23 +341,33 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [ ] Create read-only view restrictions
   - [ ] Implement edit permission validation
   - [ ] Add owner-specific operations
+- Notification service
+  - [ ] Integrate Apprise for notifications
+  - [ ] Implement notification triggers
+  - [ ] Create notification templates
+  - [ ] Add user notification preferences
 
 ### Deliverables
 - Sharing functionality with unique URLs
 - Basic permission system (read/write)
 - Access control enforcement
+- Configurable notifications via Apprise
 
 ### Acceptance Criteria
 - Owner can share images/maps with unique URLs
 - Owner can set read-only or edit permissions
 - System enforces access restrictions
 - Shared users see appropriate interface based on permissions
+- Users receive notifications for relevant events
+- Users can configure notification preferences
 
 ### Test Cases
 - Generate sharing URLs with different permissions
 - Access shared content with read-only permissions
 - Attempt unauthorized edits on shared content
 - Verify owner-specific operations
+- Test notification delivery for various events
+- Verify notification preference settings
 
 ## Phase 8: Performance Optimization (2 Weeks)
 
@@ -388,8 +426,20 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
 - Responsive mobile interface
 - Touch-optimized controls
 - Mobile-specific features
+- Optimized performance for mobile devices
 
 ### Advanced Analytics
 - Usage tracking and metrics
 - Pin engagement analytics
 - User activity reporting
+
+### Security Enhancements
+- Advanced access control features
+- Enhanced data protection
+- Additional built-in security features
+- Audit logging for security events
+
+### Cloud Integration
+- Cloud storage integration
+- Cross-device synchronization
+- Backup and restore functionality

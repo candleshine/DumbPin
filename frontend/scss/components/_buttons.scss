@@ -1,0 +1,60 @@
+/* Button styles using BEM naming convention */
+
+.button {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  background-color: $primary-color;
+  color: white;
+  border-radius: $border-radius-sm;
+  @include transition;
+  @include box-shadow;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+  }
+  
+  @include modifier('secondary') {
+    background-color: $dark-gray;
+    
+    &:hover {
+      background-color: $darker-gray;
+    }
+  }
+  
+  @include modifier('small') {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.875rem;
+  }
+  
+  @include modifier('large') {
+    padding: $spacing-md $spacing-lg;
+    font-size: 1.125rem;
+  }
+  
+  @include modifier('disabled') {
+    background-color: $medium-gray;
+    cursor: not-allowed;
+    
+    &:hover {
+      background-color: $medium-gray;
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: $spacing-sm;
+  
+  @include modifier('right') {
+    justify-content: flex-end;
+  }
+  
+  @include modifier('center') {
+    justify-content: center;
+  }
+}

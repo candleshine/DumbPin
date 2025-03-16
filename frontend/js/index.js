@@ -1,4 +1,5 @@
 // Main entry point for the frontend application
+import '../scss/main.scss';
 
 import ImageUpload from '../components/ImageUpload';
 import ImageDisplay from '../components/ImageDisplay';

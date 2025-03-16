@@ -1,0 +1,28 @@
+/*
+ * Main SCSS file for DumbPin application
+ * Following BEM naming convention and responsive design principles
+ */
+
+// Import abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Components
+@import 'components/buttons';
+@import 'components/containers';
+@import 'components/forms';
+@import 'components/image-display';
+@import 'components/image-upload';
+@import 'components/map-display';
+@import 'components/pins';
+
+// Layout
+@import 'layout/header';
+@import 'layout/content';
+
+// Responsive
+@import 'responsive/media-queries';

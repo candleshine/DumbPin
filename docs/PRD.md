@@ -24,9 +24,12 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 #### Core Functionality
 1. **Image Management**
    - Upload images (JPG, PNG, GIF formats, max 5MB)
+   - Drag and drop file uploads
+   - Multiple file selection
    - Display images with correct aspect ratio
    - Download images with pins preserved
    - Basic file-based storage system with auto-save
+   - File extension filtering
 
 2. **Pin Functionality**
    - Place pins on images with click interaction
@@ -53,8 +56,14 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 
 6. **User Experience**
    - Desktop-first interface
-   - Dynamic dark/light mode theme
+   - Mobile-friendly interface
+   - Clean, responsive UI with Dark Mode
    - Intuitive controls for pin placement and editing
+   - Configurable notifications via Apprise
+
+7. **Security**
+   - Optional PIN protection
+   - Built-in security features
 
 ### 2.2 What DumbPin Will Not Do
 
@@ -67,7 +76,6 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
    - No real-time collaborative editing
    - No version history or change tracking
    - No advanced analytics or usage metrics
-   - No mobile-specific interface (desktop-first approach)
 
 3. **Integration & Extensibility**
    - No integration with third-party services
@@ -93,6 +101,9 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - System shall enforce a 5MB file size limit
 - System shall display uploaded images with correct aspect ratio
 - System shall provide feedback on upload progress and success/failure
+- System shall support drag and drop file uploads
+- System shall allow multiple file selection
+- System shall implement file extension filtering
 
 #### 3.1.2 Image Storage
 - System shall store images in a file-based storage system
@@ -105,6 +116,7 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - System shall allow owners to share images with specific users
 - System shall implement basic permission system (read/write access)
 - System shall prevent unauthorized access to images
+- System shall support optional PIN protection for sensitive content
 
 #### 3.1.4 Image Export
 - System shall allow downloading images with pins preserved
@@ -156,6 +168,11 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - System shall support read-only and edit access modes
 - System shall prevent unauthorized modifications
 
+### 3.5 Notifications
+- System shall provide configurable notifications via Apprise
+- System shall allow users to set notification preferences
+- System shall send notifications for relevant events (shares, edits, etc.)
+
 ## 4. Non-Functional Requirements
 
 ### 4.1 Performance
@@ -168,6 +185,8 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - System shall require no more than 3 clicks to complete common tasks
 - System shall provide helpful error messages
 - System shall be accessible to users with basic computer skills
+- System shall be responsive and mobile-friendly
+- System shall provide a clean UI with consistent design patterns
 
 ### 4.3 Reliability
 - System shall implement auto-save to prevent data loss
@@ -178,18 +197,21 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - System shall implement basic access control
 - System shall validate all user input
 - System shall protect against common web vulnerabilities
+- System shall provide built-in security features
+- System shall support optional PIN protection for sensitive content
 
 ### 4.5 Compatibility
 - System shall work on modern web browsers (Chrome, Firefox, Safari, Edge)
 - System shall be optimized for desktop use
 - System shall support standard screen resolutions
+- System shall be mobile-friendly with responsive design
 
 ## 5. Technical Constraints
 
 ### 5.1 Development Stack
 - Backend: Node.js (>=20.0.0) with Express
-- Frontend: Vanilla JavaScript (ES6+)
-- Container: Docker with multi-stage builds
+- Frontend: Vanilla JavaScript (ES6+) with zero client-side dependencies
+- Container: Docker with multi-stage builds and easy configuration
 - Security: Express security middleware
 - Storage: File-based with auto-save
 - Theme: Dynamic dark/light mode with system preference support
@@ -200,6 +222,7 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - dotenv: Environment configuration
 - cookie-parser: Cookie handling
 - express-rate-limit: Rate limiting
+- apprise: Notification service integration
 
 ## 6. Implementation Phases
 
@@ -210,6 +233,7 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - Download pinned images
 - File-based storage system
 - Basic access control
+- Docker support with easy configuration
 
 ### 6.2 Phase 2 (Months 4-6)
 - Advanced pin customization
@@ -217,6 +241,9 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - Enhanced map controls
 - Improved image handling and optimization
 - Pin organization tools
+- Drag and drop file uploads
+- Multiple file selection
+- Clean, responsive UI with Dark Mode
 
 ### 6.3 Future Considerations
 - User authentication system
@@ -224,6 +251,9 @@ DumbPin revolutionizes visual collaboration by enabling users to transform stati
 - Cloud storage integration
 - Advanced security features
 - Social sharing capabilities
+- Configurable notifications via Apprise
+- Optional PIN protection
+- File extension filtering
 
 ## 7. Success Metrics
 

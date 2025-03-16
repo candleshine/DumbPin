@@ -1,0 +1,24 @@
+/* Image upload styles using BEM naming convention */
+
+.image-upload {
+  width: 100%;
+  
+  &__container {
+    @include flex-column;
+    gap: $spacing-md;
+  }
+  
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: $spacing-sm;
+  }
+  
+  &__error {
+    color: $error-color;
+    padding: $spacing-sm;
+    background-color: $error-bg-color;
+    border-radius: $border-radius-sm;
+    margin-top: $spacing-sm;
+  }
+}
