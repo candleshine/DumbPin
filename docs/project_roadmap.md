@@ -116,9 +116,9 @@ This roadmap outlines the development plan for DumbPin, divided into frontend an
   - [ ] Implement color selection for pins
   - [ ] Add size adjustment options
 - UI Enhancements
-  - [ ] Implement dark mode toggle
-  - [ ] Create responsive UI components
-  - [ ] Add accessibility features
+  - [x] Implement dark mode toggle
+  - [x] Create responsive UI components
+  - [x] Add accessibility features
 
 ### Backend Tasks
 - Pin data management

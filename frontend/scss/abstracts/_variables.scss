@@ -1,21 +1,24 @@
 // Variables for DumbPin application
+// These SASS variables reference CSS variables from _themes.scss
 
 // Colors
-$primary-color: #4a6fa5;
-$secondary-color: #ff6b6b;
-$background-color: #f8f9fa;
-$text-color: #333;
-$border-color: #ddd;
-$error-color: #dc3545;
-$error-bg-color: #f8d7da;
-$light-gray: #e9ecef;
-$medium-gray: #dee2e6;
-$dark-gray: #6c757d;
-$darker-gray: #5a6268;
+$primary-color: var(--primary-color);
+$primary-color-rgb: var(--primary-color-rgb, 74, 111, 165); // Fallback RGB values for #4a6fa5
+$primary-color-darken: var(--primary-color-darken, #3d5d8a); // Darker version of primary color
+$secondary-color: var(--secondary-color);
+$background-color: var(--background-color);
+$text-color: var(--text-color);
+$border-color: var(--border-color);
+$error-color: var(--error-color);
+$error-bg-color: var(--error-bg-color);
+$light-gray: var(--light-gray);
+$medium-gray: var(--medium-gray);
+$dark-gray: var(--dark-gray);
+$darker-gray: var(--darker-gray);
 
 // Shadows
-$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-$pin-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+$box-shadow: var(--box-shadow);
+$pin-shadow: var(--pin-shadow);
 
 // Spacing
 $spacing-xs: 5px;

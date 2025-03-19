@@ -1,4 +1,7 @@
 /* Typography styles */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color';
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: $spacing-md;
@@ -39,6 +42,6 @@ a {
   @include transition(color);
   
   &:hover {
-    color: darken($primary-color, 15%);
+    color: $primary-color-darken;
   }
 }

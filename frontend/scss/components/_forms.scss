@@ -1,4 +1,6 @@
 /* Form styles using BEM naming convention */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .form {
   @include flex-column;

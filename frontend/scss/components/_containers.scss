@@ -1,7 +1,9 @@
 /* Container styles using BEM naming convention */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .container {
-  background-color: white;
+  background-color: var(--card-background);
   border-radius: $border-radius-md;
   @include box-shadow;
   padding: $spacing-lg;
@@ -21,7 +23,7 @@
 }
 
 .card {
-  background-color: white;
+  background-color: var(--card-background);
   border-radius: $border-radius-sm;
   @include box-shadow;
   overflow: hidden;

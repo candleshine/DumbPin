@@ -1,4 +1,7 @@
 /* Button styles using BEM naming convention */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color';
 
 .button {
   display: inline-block;
@@ -10,7 +13,7 @@
   @include box-shadow;
   
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: $primary-color-darken;
   }
   
   &:focus {

@@ -41,7 +41,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 8080,
+    port: 8000,
     host: '0.0.0.0', // Allow connections from outside the container
     hot: true,
     proxy: [

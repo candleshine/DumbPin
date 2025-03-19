@@ -4,25 +4,27 @@
  */
 
 // Import abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/themes';
 
 // Base styles
-@import 'base/reset';
-@import 'base/typography';
+@use 'base/reset';
+@use 'base/typography';
 
 // Components
-@import 'components/buttons';
-@import 'components/containers';
-@import 'components/forms';
-@import 'components/image-display';
-@import 'components/image-upload';
-@import 'components/map-display';
-@import 'components/pins';
+@use 'components/buttons';
+@use 'components/containers';
+@use 'components/forms';
+@use 'components/image-display';
+@use 'components/image-upload';
+@use 'components/map-display';
+@use 'components/pins';
+@use 'components/theme-toggle';
 
 // Layout
-@import 'layout/header';
-@import 'layout/content';
+@use 'layout/header';
+@use 'layout/content';
 
 // Responsive
-@import 'responsive/media-queries';
+@use 'responsive/media-queries';

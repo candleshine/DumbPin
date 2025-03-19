@@ -1,4 +1,6 @@
 /* Image upload styles using BEM naming convention */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .image-upload {
   width: 100%;
@@ -20,5 +22,27 @@
     background-color: $error-bg-color;
     border-radius: $border-radius-sm;
     margin-top: $spacing-sm;
+  }
+}
+
+.file-input-container {
+  padding: $spacing-lg;
+  border: 2px dashed $border-color;
+  border-radius: $border-radius-md;
+  background-color: $light-gray;
+  text-align: center;
+  @include transition;
+  cursor: pointer;
+  
+  &--dragging {
+    border-color: $primary-color;
+    background-color: rgba($primary-color, 0.1);
+    transform: scale(1.02);
+  }
+  
+  .file-input-help {
+    margin-top: $spacing-md;
+    color: $dark-gray;
+    font-size: 0.875rem;
   }
 }

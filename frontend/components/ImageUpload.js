@@ -1,6 +1,7 @@
 /**
  * ImageUpload Component
  * Handles image file selection, validation, and uploading
+ * Supports drag-and-drop functionality for improved user experience
  */
 
 class ImageUpload {
@@ -8,6 +9,7 @@ class ImageUpload {
     this.container = containerElement;
     this.onImageUploaded = onImageUploaded;
     this.selectedFile = null;
+    this.isDragging = false;
     this.init();
   }
 
@@ -29,12 +31,13 @@ class ImageUpload {
     uploadContainer.className = 'image-upload';
     uploadContainer.innerHTML = `
       <div class="upload-container">
-        <div class="file-input-container">
-          <input type="file" id="fileInput" class="file-input" accept="image/jpeg,image/png,image/gif">
+        <div class="file-input-container" id="dropZone">
+          <input type="file" id="fileInput" class="file-input" accept="image/jpeg,image/png,image/gif" multiple>
           <label for="fileInput" class="file-input-label">
             <span class="file-input-icon">📁</span>
-            <span class="file-input-text">Choose an image</span>
+            <span class="file-input-text">Choose an image or drag and drop here</span>
           </label>
+          <p class="file-input-help">Supports JPG, PNG, and GIF up to 5MB</p>
         </div>
         <div class="selected-file-info" id="selectedFileInfo" style="display: none;">
           <p class="selected-file-name" id="selectedFileName"></p>
@@ -67,7 +70,7 @@ class ImageUpload {
    * Set up event listeners
    */
   setupEventListeners() {
-    // File selection
+    // File selection via input
     this.fileInput.addEventListener('change', (event) => {
       this.handleFileSelection(event);
     });
@@ -76,10 +79,58 @@ class ImageUpload {
     this.uploadButton.addEventListener('click', () => {
       this.uploadImage();
     });
+    
+    // Drag and drop functionality
+    const dropZone = document.getElementById('dropZone');
+    
+    // Prevent default behavior to allow drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }, false);
+    });
+    
+    // Handle drag enter and over events
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, () => {
+        this.isDragging = true;
+        dropZone.classList.add('file-input-container--dragging');
+      }, false);
+    });
+    
+    // Handle drag leave and drop events
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, () => {
+        this.isDragging = false;
+        dropZone.classList.remove('file-input-container--dragging');
+      }, false);
+    });
+    
+    // Handle file drop
+    dropZone.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        this.handleDroppedFiles(files);
+      }
+    }, false);
   }
 
   /**
-   * Handle file selection
+   * Handle files dropped into the drop zone
+   * @param {FileList} files - The dropped files
+   */
+  handleDroppedFiles(files) {
+    // For now, just handle the first file
+    // In a future enhancement, we could handle multiple files
+    if (files.length > 0) {
+      const file = files[0];
+      this.validateAndProcessFile(file);
+    }
+  }
+  
+  /**
+   * Handle file selection from file input
    * @param {Event} event - File input change event
    */
   handleFileSelection(event) {
@@ -88,7 +139,15 @@ class ImageUpload {
       this.resetFileSelection();
       return;
     }
-
+    
+    this.validateAndProcessFile(file);
+  }
+  
+  /**
+   * Validate and process a file
+   * @param {File} file - The file to validate and process
+   */
+  validateAndProcessFile(file) {
     // Validate file type
     const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
     if (!validTypes.includes(file.type)) {

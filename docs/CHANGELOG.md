@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Frontend
+- Implemented modern UI with dark/light mode toggle
+- Added theme system using CSS variables
+- Improved responsive design and accessibility
+- Enhanced UI components with consistent styling
+
 ## [0.1.2] - 2025-03-26
 
 ### Backend

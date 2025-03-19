@@ -2,6 +2,14 @@
  * @jest-environment jsdom
  */
 
+// Mock the component imports before requiring the index.js file
+jest.mock('../components/ImageUpload');
+jest.mock('../components/ImageDisplay');
+jest.mock('../components/MapDisplay');
+
+// Mock the SCSS import
+jest.mock('../scss/main.scss', () => {}, { virtual: true });
+
 describe('Frontend Application', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="app"></div>';

@@ -1,1 +1,8 @@
-/* Header styles using BEM
+/* Header styles using BEM naming convention */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.app-header {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+}

@@ -4,6 +4,8 @@ DumbPin is inspired by but related to DumbWare.io.  I am creating a tool that al
 
 DumbPin revolutionizes the way you interact with images and maps! Whether you're planning a tour, sharing photography spots, or tracking your travels, DumbPin makes visual collaboration simple and fun.
 
+![DumbPin Logo](shared/assets/images/dumbpin-logo.svg)
+
 ## Why DumbPin? ✨
 
 - 🖼️ **Interactive Image Pinning**: Transform any image into an interactive canvas

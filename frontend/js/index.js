@@ -4,6 +4,7 @@ import '../scss/main.scss';
 import ImageUpload from '../components/ImageUpload';
 import ImageDisplay from '../components/ImageDisplay';
 import MapDisplay from '../components/MapDisplay';
+import ThemeToggle from '../components/ThemeToggle';
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DumbPin application initialized');
@@ -34,6 +35,7 @@ function initApp() {
       <div class="container display-section" id="displaySection"></div>
       <div class="container map-section" id="mapSection"></div>
     </main>
+    <div id="themeToggle"></div>
   `;
   
   // Initialize components
@@ -53,6 +55,9 @@ function initApp() {
   // Create map display component and connect it with image display
   const mapDisplay = new MapDisplay(mapSection);
   
+  // Create theme toggle component
+  const themeToggle = new ThemeToggle(document.getElementById('themeToggle'));
+  
   // Return components for potential future use
-  return { imageUpload, imageDisplay, mapDisplay };
+  return { imageUpload, imageDisplay, mapDisplay, themeToggle };
 }

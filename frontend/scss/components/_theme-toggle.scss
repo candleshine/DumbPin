@@ -1,0 +1,52 @@
+/* Theme toggle styles using BEM naming convention */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.theme-toggle {
+  position: fixed;
+  top: $spacing-md;
+  right: $spacing-md;
+  z-index: $z-index-pin-active;
+  
+  @include element('button') {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @include box-shadow;
+    @include transition;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.3);
+    }
+  }
+  
+  @include element('icon') {
+    font-size: 1.2rem;
+    @include transition;
+    
+    @include modifier('light') {
+      display: block;
+      [data-theme="dark"] & {
+        display: none;
+      }
+    }
+    
+    @include modifier('dark') {
+      display: none;
+      [data-theme="dark"] & {
+        display: block;
+      }
+    }
+  }
+}

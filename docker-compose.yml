@@ -5,7 +5,7 @@ services:
     build: .
     ports:
       - "3000:3000"  # Backend API port
-      - "8080:8080"  # Frontend webpack dev server port
+      - "8000:8000"  # Frontend webpack dev server port
     volumes:
       - .:/app
       - /app/node_modules
